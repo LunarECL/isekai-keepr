@@ -428,8 +428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preparedRunes: []
-  similarityThreshold: 0.75
-  numPointsToCompare: 100
+  similarityThreshold: 0.7
+  numPointsToCompare: 500
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
