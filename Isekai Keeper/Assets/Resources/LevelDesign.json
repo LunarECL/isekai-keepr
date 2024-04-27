@@ -1,0 +1,20 @@
+﻿{
+  "levels": [
+    {
+      "timeLimit": 30,
+      "monsters": [
+        {
+          "spawnDelay": 5
+        },
+        {
+          "spawnDelay": 8
+        },
+        {
+          "spawnDelay": 10
+        }
+      ],
+      "allowedDoorDirections": 1,
+      "isInfinite": false
+    }
+  ]
+}

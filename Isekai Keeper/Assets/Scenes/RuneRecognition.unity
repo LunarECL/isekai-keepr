@@ -320,6 +320,7 @@ MonoBehaviour:
   runePrefab: {fileID: 5167071700697245742, guid: 0b02ebe2e63e791418d0fe1a8bf6c931, type: 3}
   runeComparator: {fileID: 1926729191}
   runeSaver: {fileID: 1926729190}
+  drawingCanvas: {fileID: 1926729188}
 --- !u!114 &1926729186
 MonoBehaviour:
   m_ObjectHideFlags: 0

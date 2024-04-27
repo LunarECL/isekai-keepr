@@ -18,6 +18,32 @@ public class RoomManager : MonoBehaviour
         HandleInput();
         ProcessRotation();
     }
+    
+    public int GetCurrentWallIndex()
+    {
+        // 현재 바라보고 있는 문의 인덱스 반환 0 = 1, 3 = 1, 2 = 2, 1 = 3
+        float currentAngle = roomTransform.rotation.eulerAngles.y;
+        int wallIndex = Mathf.RoundToInt(currentAngle / 90f) % 4;
+        
+        if (wallIndex == 0)
+        {
+            wallIndex = 0;
+        }
+        else if (wallIndex == 3)
+        {
+            wallIndex = 1;
+        }
+        else if (wallIndex == 2)
+        {
+            wallIndex = 3;
+        }
+        else if (wallIndex == 1)
+        {
+            wallIndex = 2;
+        }
+        
+        return wallIndex;
+    }
 
     private void HandleInput()
     {

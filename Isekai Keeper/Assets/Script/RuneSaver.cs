@@ -6,6 +6,16 @@ using Vector2 = UnityEngine.Vector2;
 public class RuneSaver : MonoBehaviour
 {
     public bool isSaveMode = false;
+    // make select list at interpreter for monster color "red", "blue", "green", "yellow"
+    public enum MonsterColor
+    {
+        Red,
+        Blue,
+        Green,
+        Yellow
+    }
+    public MonsterColor monsterColor;
+    
     private const string SaveFileName = "PreparedRunes.json";
 
     private void Awake()
@@ -15,7 +25,7 @@ public class RuneSaver : MonoBehaviour
 
     public void SaveRune(List<Vector2> drawnPoints)
     {
-        string runeName = "Rune_" + System.DateTime.Now.ToString("yyyyMMddHHmmss");
+        string runeName = monsterColor.ToString();
         RuneData newRune = new RuneData();
         newRune.name = runeName;
         newRune.points = new List<Vector2>(drawnPoints);
@@ -44,7 +54,7 @@ public class RuneSaver : MonoBehaviour
             {
                 Directory.CreateDirectory(directoryPath);
             }
-        
+
             string json = JsonUtility.ToJson(new RuneDataList(runeComparator.preparedRunes));
             File.WriteAllText(filePath, json);
         }

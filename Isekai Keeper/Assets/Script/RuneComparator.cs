@@ -21,7 +21,7 @@ public class RuneComparator : MonoBehaviour
         }
     }
 
-    private bool CompareRunePoints(List<Vector2> drawnPoints, List<Vector2> preparedPoints)
+    public bool CompareRunePoints(List<Vector2> drawnPoints, List<Vector2> preparedPoints)
     {
         List<Vector2> normalizedDrawnPoints = NormalizePoints(drawnPoints, numPointsToCompare);
         List<Vector2> normalizedPreparedPoints = NormalizePoints(preparedPoints, numPointsToCompare);
@@ -44,6 +44,7 @@ public class RuneComparator : MonoBehaviour
                 dtw[i, j] = float.PositiveInfinity;
             }
         }
+
         dtw[0, 0] = 0;
 
         for (int i = 1; i <= n; i++)
@@ -62,7 +63,6 @@ public class RuneComparator : MonoBehaviour
     private List<Vector2> NormalizePoints(List<Vector2> points, int numPoints)
     {
         List<Vector2> normalizedPoints = new List<Vector2>();
-
         Vector2 centroid = CalculateCentroid(points);
         float maxDistance = CalculateMaxDistance(points, centroid);
 
@@ -85,6 +85,7 @@ public class RuneComparator : MonoBehaviour
         {
             sum += point;
         }
+
         return sum / points.Count;
     }
 
@@ -99,6 +100,7 @@ public class RuneComparator : MonoBehaviour
                 maxDistance = distance;
             }
         }
+
         return maxDistance;
     }
 }
