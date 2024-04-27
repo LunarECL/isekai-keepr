@@ -80,6 +80,10 @@ public class LevelManager : MonoBehaviour
             LevelData currentLevelData = levelDatas[currentLevelIndex];
         
             int doorIndex = GetRandomDoorIndex(currentLevelData.allowedDoorDirections);
+            if (doorIndex == -1)
+            {
+                return;
+            }
             string monsterColor = GetRandomMonsterColor();
             
             openedDoors[doorIndex] = monsterColor;
@@ -127,7 +131,7 @@ public class LevelManager : MonoBehaviour
         
         if (openedDoors.ContainsKey(DoorIndex))
         {
-            return GetRandomDoorIndex(allowedDirections);
+            return -1; // GetRandomDoorIndex(allowedDirections);
         }
         
         return DoorIndex;

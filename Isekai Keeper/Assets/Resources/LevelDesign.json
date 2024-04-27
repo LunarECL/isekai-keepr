@@ -7,14 +7,32 @@
           "spawnDelay": 5
         },
         {
-          "spawnDelay": 8
+          "spawnDelay": 10
         },
         {
-          "spawnDelay": 10
+          "spawnDelay": 13
+        },
+        {
+          "spawnDelay": 16
+        },
+        {
+          "spawnDelay": 18
+        },
+        {
+          "spawnDelay": 20
+        },
+        {
+          "spawnDelay": 25
+        },
+        {
+          "spawnDelay": 26
+        },
+        {
+          "spawnDelay": 28
         }
       ],
-      "allowedDoorDirections": 1,
-      "isInfinite": false
+      "allowedDoorDirections": 3,
+      "isInfinite": true
     }
   ]
 }

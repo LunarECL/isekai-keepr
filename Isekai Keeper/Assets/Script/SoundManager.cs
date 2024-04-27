@@ -8,9 +8,11 @@ public class SoundManager : MonoBehaviour
 
     public void PlayHeartbeatSound(int doorIndex)
     {
-        if (doorIndex >= 0 && doorIndex < audioSources.Length)
+        // find wall Index based on doorIndex
+        int wallIndex = doorIndex / 3;
+        if (wallIndex >= 0 && wallIndex < audioSources.Length)
         {
-            StartCoroutine(FadeInAudioSource(doorIndex));
+            StartCoroutine(FadeInAudioSource(wallIndex));
         }
     }
 
