@@ -143,6 +143,35 @@ MonoBehaviour:
   - {fileID: 2100000, guid: cbc68de702ff3be4b93960afbb744f91, type: 2}
   - {fileID: 2100000, guid: ab0158f8c7d47a6448642cecfcdf84e2, type: 2}
   - {fileID: 2100000, guid: f5dd7ec93875ab844991a51b80b0e018, type: 2}
+  is_rotate_Sig: 0
+  doorTransform: {fileID: 3103765278838295492}
+  openRotationTime: 10
+  closeRotationTime: 1
+  openRotationAngle: -105
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4139988632176007346
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +323,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
