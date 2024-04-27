@@ -1,22 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
     // DoorManager.cs
+    public GameObject[] Door_arr;
+    private Dictionary<string, int> colorDic = new Dictionary<string, int>();
+    private void Start ()
+    {
+        AddData();
+    }
+    void AddData()
+    {
+        colorDic.Add("black", 0);
+        colorDic.Add("red", 1);
+        colorDic.Add("blue", 2);
+        colorDic.Add("green", 3);
+        colorDic.Add("yellow", 4);
+    }
+
     public void OpenDoor(int doorIndex, string monsterColor)
     {
-        // 문 열기 로직 처리 한 index 에 door 개수는 3개 random 고르기
-        
+        Door_arr[doorIndex].GetComponent<DoorController>().is_rotate_Sig = true;
+        Door_arr[doorIndex].GetComponent<DoorController>().color_index = colorDic[monsterColor];
         Debug.Log($"Door {doorIndex} is opening. Monster color: {monsterColor}");
-        // 문 열림 애니메이션 재생
-        // 문 색상 변경
     }
 
     public void CloseDoor(int doorIndex)
     {
-        // 문 닫기 로직 처리
+        Door_arr[doorIndex].GetComponent<DoorController>().is_rotate_Sig = false;
         Debug.Log($"Door {doorIndex} is closing.");
-        // 문 닫힘 애니메이션 재생
-        // 문 색상 원래대로 변경
     }
 }
