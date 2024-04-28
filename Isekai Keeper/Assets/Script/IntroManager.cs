@@ -21,6 +21,11 @@ public class IntroManager : MonoBehaviour
         tutorial.SetActive(true);
         ConversationManager.Instance.StartConversation(myConv);
     }
+    public void ReStartGame()
+    {
+        LoadMainScene();
+    }
+       
 
     public void StartScene(bool a)
     {
