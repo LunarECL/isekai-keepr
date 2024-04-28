@@ -16,7 +16,7 @@ public class RuneSaver : MonoBehaviour
     }
     public MonsterColor monsterColor;
     
-    private const string SaveFileName = "PreparedRunes.json";
+    private const string SaveFileName = "PreparedRunes";
 
     private void Awake()
     {
@@ -64,20 +64,17 @@ public class RuneSaver : MonoBehaviour
     {
         RuneComparator runeComparator = GetComponent<RuneComparator>();
         if (runeComparator != null)
-        {
-            string filePath = GetSaveFilePath();
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                RuneDataList loadedData = JsonUtility.FromJson<RuneDataList>(json);
-                runeComparator.preparedRunes = loadedData.runes;
-            }
+        { 
+            string file = Resources.Load<TextAsset>(SaveFileName).text;
+            RuneDataList runeDataList = JsonUtility.FromJson<RuneDataList>(file);
+            runeComparator.preparedRunes = runeDataList.runes;
         }
     }
 
     private string GetSaveFilePath()
     {
-        return Path.Combine(Application.dataPath, "Data", SaveFileName);
+        // Resources 폴더에 저장
+        return Path.Combine(Application.dataPath, "Resources", SaveFileName);
     }
 }
 
