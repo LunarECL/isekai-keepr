@@ -31,7 +31,7 @@ public class DoorController : MonoBehaviour
 
     public Transform doorTransform;
     public float openRotationTime = 10f;
-    public float closeRotationTime = 0.5f;
+    public float closeRotationTime = 0f;
     public float openRotationAngle = -105f;
     private float closeRotationAngle = 0f;
     public AnimationCurve rotationCurve;

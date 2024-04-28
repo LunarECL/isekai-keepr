@@ -149,7 +149,7 @@ MonoBehaviour:
   is_rotate_Sig: 0
   doorTransform: {fileID: 3103765278838295492}
   openRotationTime: 10
-  closeRotationTime: 0.5
+  closeRotationTime: 0
   openRotationAngle: -105
   rotationCurve:
     serializedVersion: 2

@@ -1,3 +1,4 @@
+using System;
 using DialogueEditor;
 using TMPro;
 using UnityEditor;
@@ -17,9 +18,20 @@ public class IntroManager : MonoBehaviour
     
     public TMP_Text text;
     
+    ScoreManager scoreManager;
+
+    public void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "gameover")
+        {
+            scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+            int score = scoreManager.GetScore();
+            text.text = "Score: " + score;
+        }
+    }
+
     public void Update()
     {
-        // rainbow text from Red to Green to Blue to purple
         text.color = new Color(Mathf.Sin(Time.time), Mathf.Sin(Time.time + 2), Mathf.Sin(Time.time + 4), 1);
     }
 

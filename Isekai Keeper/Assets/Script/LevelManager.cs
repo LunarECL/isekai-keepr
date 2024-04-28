@@ -8,13 +8,19 @@ public class LevelManager : MonoBehaviour
     public RuneManager runeManager;
     public SoundManager soundManager;
     public GameManager gameManager;
+    public ScoreManager scoreManager;
 
     private LevelData[] levelDatas;
     private int currentLevelIndex = 0;
     private float levelTimer;
-    private float monsterSpawnTimer;
+    private int monsterSpawnIndex = 0;
 
     private Dictionary<int, string> openedDoors = new Dictionary<int, string>();
+
+    public void Start()
+    {
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
 
     public void SetLevelDatas(LevelData[] levelDatas)
     {
@@ -26,10 +32,8 @@ public class LevelManager : MonoBehaviour
         // 레벨 시작 로직 처리
         if (currentLevelIndex < levelDatas.Length)
         {
-            LevelData currentLevelData = levelDatas[currentLevelIndex];
             levelTimer = 0f;
-            monsterSpawnTimer = 0f;
-            SpawnMonster();
+            monsterSpawnIndex = 0;
         }
         else
         {
@@ -57,6 +61,7 @@ public class LevelManager : MonoBehaviour
                 if (currentLevelData.isInfinite)
                 {
                     levelTimer = 0f; // 무한 모드에서는 타이머 초기화
+                    monsterSpawnIndex = 0;
                 }
                 else
                 {
@@ -64,11 +69,9 @@ public class LevelManager : MonoBehaviour
                 }
             }
             
-            monsterSpawnTimer += Time.deltaTime;
-            if (monsterSpawnTimer >= GetNextMonsterSpawnDelay())
+            if (levelTimer >= GetNextMonsterSpawnDelay())
             {
                 SpawnMonster();
-                monsterSpawnTimer = 0f;
             }
         }
     }
@@ -84,6 +87,8 @@ public class LevelManager : MonoBehaviour
             {
                 return;
             }
+
+            monsterSpawnIndex++;
             string monsterColor = GetRandomMonsterColor();
             
             openedDoors[doorIndex] = monsterColor;
@@ -98,7 +103,7 @@ public class LevelManager : MonoBehaviour
         if (currentLevelIndex < levelDatas.Length)
         {
             LevelData currentLevelData = levelDatas[currentLevelIndex];
-            int monsterIndex = UnityEngine.Random.Range(0, currentLevelData.monsters.Length);
+            int monsterIndex = monsterSpawnIndex;
             return currentLevelData.monsters[monsterIndex].spawnDelay;
         }
         
@@ -159,9 +164,15 @@ public class LevelManager : MonoBehaviour
         if (openedDoors.ContainsKey(doorIndex))
         {
             string monsterColor = openedDoors[doorIndex];
+            
+            // Red: 100, Blue: 200, Green: 300, Yellow: 400
+            int score = (1 + (int)Enum.Parse(typeof(RuneSaver.MonsterColor), monsterColor)) * 100;
+            scoreManager.AddScore(score);
+            
             openedDoors.Remove(doorIndex);
             doorManager.CloseDoor(doorIndex);
             soundManager.StopHeartbeatSound();
+            
         
             if (!IsLevelInfinite())
             {

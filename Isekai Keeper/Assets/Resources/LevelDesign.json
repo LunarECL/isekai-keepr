@@ -17,6 +17,9 @@
         },
         {
           "spawnDelay": 18
+        },
+        {
+          "spawnDelay": 21
         }
       ],
       "allowedDoorDirections": 1,
@@ -51,6 +54,9 @@
         },
         {
           "spawnDelay": 28
+        },
+        {
+          "spawnDelay": 31
         }
       ],
       "allowedDoorDirections": 2,
@@ -76,6 +82,9 @@
         },
         {
           "spawnDelay": 18
+        },
+        {
+          "spawnDelay": 21
         }
       ],
       "allowedDoorDirections": 3,
@@ -89,6 +98,9 @@
         },
         {
           "spawnDelay": 3
+        },
+        {
+          "spawnDelay": 5
         }
       ],
       "allowedDoorDirections": 3,
