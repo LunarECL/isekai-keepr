@@ -1,6 +1,28 @@
 ﻿{
   "levels": [
     {
+      "timeLimit": 20,
+      "monsters": [
+        {
+          "spawnDelay": 5
+        },
+        {
+          "spawnDelay": 10
+        },
+        {
+          "spawnDelay": 13
+        },
+        {
+          "spawnDelay": 16
+        },
+        {
+          "spawnDelay": 18
+        }
+      ],
+      "allowedDoorDirections": 1,
+      "isInfinite": false
+    },
+    {
       "timeLimit": 30,
       "monsters": [
         {
@@ -29,6 +51,19 @@
         },
         {
           "spawnDelay": 28
+        }
+      ],
+      "allowedDoorDirections": 2,
+      "isInfinite": false
+    },
+    {
+      "timeLimit": 4,
+      "monsters": [
+        {
+          "spawnDelay": 1
+        },
+        {
+          "spawnDelay": 3
         }
       ],
       "allowedDoorDirections": 3,
