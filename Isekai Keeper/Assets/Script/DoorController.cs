@@ -5,6 +5,7 @@ public class DoorController : MonoBehaviour
 {
     public SpriteRenderer circle;
     public GameObject door_light;
+    public GameObject monster;
     public Material[] colours;
     public int color_index;
 
@@ -55,6 +56,7 @@ public class DoorController : MonoBehaviour
         if (opening && !is_rotate_Sig)
         {
             opening = false;
+            monster.SetActive(false);
             closeRotationAngle = -doorTransform.localRotation.eulerAngles.y;
             ChangeRotationDirection(closeRotationAngle);
         }
@@ -75,6 +77,7 @@ public class DoorController : MonoBehaviour
         {
             is_rotating = true;
             opening = true;
+            monster.SetActive(true);
             StartRotation(openRotationAngle);
         }
         if (is_rotating)
