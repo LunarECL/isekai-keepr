@@ -1,7 +1,9 @@
 using DialogueEditor;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
 {
@@ -12,6 +14,14 @@ public class IntroManager : MonoBehaviour
 
     public AudioSource AudioSource;
     public AudioClip[] audios;
+    
+    public TMP_Text text;
+    
+    public void Update()
+    {
+        // rainbow text from Red to Green to Blue to purple
+        text.color = new Color(Mathf.Sin(Time.time), Mathf.Sin(Time.time + 2), Mathf.Sin(Time.time + 4), 1);
+    }
 
     public void StartGame()
     {

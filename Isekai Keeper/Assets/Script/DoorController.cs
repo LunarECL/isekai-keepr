@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorController : MonoBehaviour
 {
@@ -93,6 +94,7 @@ public class DoorController : MonoBehaviour
                 {
                     is_rotate_Sig = false;
                     // GameManager.GameOver();
+                    SceneManager.LoadScene("Over");
                 }
                 else
                 {
