@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OptionManager : MonoBehaviour
 {
+    public static OptionManager Instance;
     private const float targetAspect = 16f / 9f;
 
     void Update()
@@ -35,5 +36,16 @@ public class OptionManager : MonoBehaviour
         {
             Screen.SetResolution(width, height, Screen.fullScreen);
         }
+    }
+    
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 }
