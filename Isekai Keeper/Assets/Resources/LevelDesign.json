@@ -91,7 +91,7 @@
       "isInfinite": false
     },
     {
-      "timeLimit": 4,
+      "timeLimit": 20,
       "monsters": [
         {
           "spawnDelay": 1
@@ -101,6 +101,52 @@
         },
         {
           "spawnDelay": 5
+        },
+        {
+          "spawnDelay": 7
+        },
+        {
+          "spawnDelay": 9
+        },
+        {
+          "spawnDelay": 11
+        },
+        {
+          "spawnDelay": 13
+        },
+        {
+          "spawnDelay": 15
+        },
+        {
+          "spawnDelay": 17
+        },
+        {
+          "spawnDelay": 19
+        },
+        {
+          "spawnDelay": 20
+        },
+        {
+          "spawnDelay": 21
+        }
+      ],
+      "allowedDoorDirections": 3,
+      "isInfinite": false
+    },
+    {
+      "timeLimit": 3,
+      "monsters": [
+        {
+          "spawnDelay": 1
+        },
+        {
+          "spawnDelay": 2
+        },
+        {
+          "spawnDelay": 3
+        },
+        {
+          "spawnDelay": 4
         }
       ],
       "allowedDoorDirections": 3,
