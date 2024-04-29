@@ -672,3 +672,14 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0), with exceptions for assets obtained under the Standard Unity Asset Store End User License Agreement (EULA).
+
+For assets obtained from the Unity Asset Store:
+  - The use of assets is governed by the Standard Unity Asset Store EULA.
+  - Please refer to the Unity Asset Store EULA for specific terms and conditions regarding the use and distribution of those assets.
+
+For the remaining parts of the project:
+  - This project is licensed under the terms of the GNU GPL-3.0 license.
+  - You are free to modify and distribute the project under the conditions outlined in the GPL-3.0 license, except where noted otherwise for assets obtained from the Unity Asset Store.
