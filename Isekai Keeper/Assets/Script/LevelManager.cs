@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     public void Start()
     {
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        scoreManager.score = 0;
     }
 
     public void SetLevelDatas(LevelData[] levelDatas)
@@ -118,13 +119,13 @@ public class LevelManager : MonoBehaviour
         switch (allowedDirections)
         {
             case DoorDirection.Front:
-                maxWallIndex = 0;
+                maxWallIndex = 1;
                 break;
             case DoorDirection.FrontAndSide:
-                maxWallIndex = 2;
+                maxWallIndex = 3;
                 break;
             case DoorDirection.All:
-                maxWallIndex = 3;
+                maxWallIndex = 4;
                 break;
         }
     

@@ -353,7 +353,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87423324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5ea3017a0034cec854b6b8ad0535336, type: 3}
   m_Name: 
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87423324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f50c63e149b444fad4e8e309107b1d, type: 3}
   m_Name: 
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87423324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f969341dc1adb5d47a50e6ebff4505c4, type: 3}
   m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87423324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04b52795fad949339caf0407a2bd4680, type: 3}
   m_Name: 
@@ -3045,8 +3045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3515931a175341e2944fa20c0de57779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSaveMode: 0
-  monsterColor: 0
+  isSaveMode: 1
+  monsterColor: 1
 --- !u!114 &1437594193
 MonoBehaviour:
   m_ObjectHideFlags: 0
